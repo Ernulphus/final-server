@@ -3,14 +3,32 @@ const db = require('../db');
 
 const Campus = db.define("campus", {
 
-  name: {
-    type: Sequelize.STRING,
-    allowNull: false
-  },
+    // Do not allow Null, validate that the string is non-empty
+    name: {
+      type: Sequelize.STRING,
+      allowNull: false,
+      validate: {notEmpty: true}
+    },
 
-  description: {
-    type: Sequelize.STRING,
-  }
+    // Link to default icon for campuses
+    imageURL: {
+      type: Sequelize.STRING,
+      defaultValue: "https://www.pngitem.com/pimgs/m/326-3263617_university-icon-png-transparent-png.png"
+    }
+
+    // Address, also not Null or empty
+    address: {
+      type: Sequelize.STRING,
+      allowNull: false,
+      validate: {notEmpty: true}
+    }
+
+    // Description, TEXT is unlimited size
+    description: {
+      type: Sequelize.TEXT
+    }
+
+  });
 
 });
 

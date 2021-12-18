@@ -1,4 +1,4 @@
-// Instantiate database 
+// Instantiate database
 
 // Module dependencies;
 const Sequelize = require('sequelize');
@@ -12,5 +12,6 @@ const db = new Sequelize(dbName, dbUser, dbPwd, {
   host: 'localhost',
   dialect: 'postgres'
 });
+
 // Export our instance of Sequelize, which will be modified with models;
 module.exports = db;
