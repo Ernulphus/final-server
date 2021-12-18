@@ -28,8 +28,6 @@ const Campus = db.define("campus", {
       type: Sequelize.TEXT
     }
 
-  });
-
 });
 
 module.exports = Campus;
