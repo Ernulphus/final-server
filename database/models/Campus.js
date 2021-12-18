@@ -13,7 +13,7 @@ const Campus = db.define("campus", {
     // Link to default icon for campuses
     imageURL: {
       type: Sequelize.STRING,
-      defaultValue: "https://www.pngitem.com/pimgs/m/326-3263617_university-icon-png-transparent-png.png"
+      defaultValue: "https://icon-library.com/images/graduation-hat-icon/graduation-hat-icon-4.jpg"
     },
 
     // Address, also not Null or empty
