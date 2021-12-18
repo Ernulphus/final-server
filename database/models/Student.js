@@ -14,19 +14,19 @@ const Student = db.define("student", {
     type: Sequelize.STRING,
     allowNull: false,
     validate: {notEmpty: true}
-  }
+  },
 
   email: {
     type: Sequelize.STRING,
     allowNull: false,
     validate: {notEmpty: true}
-  }
+  },
 
   // Link to default student icon
   imageURL: {
     type: Sequelize.STRING,
     defaultValue: "https://it.tufts.edu/sites/default/files/inline-images/student-icon_1_2.png"
-  }
+  },
 
   // Decimal value on [0,4]. Rounds to 3 decimal places.
   gpa: {
