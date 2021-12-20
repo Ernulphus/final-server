@@ -16,13 +16,13 @@ const apiRouter = require('./routes/index');
 const syncDatabase = async () => {
   //sync and seed
   try {
-    await db.sync({force: true});
+    await db.sync();
     console.log('------Synced to db--------')
-    await seedDB();
-    console.log('--------Successfully seeded db--------');
+    //await seedDB();
+    //console.log('--------Successfully seeded db--------');
   } catch (err) {
     console.error('syncDB error:', err);
-  }  
+  }
 }
 
 const configureApp = async () => {
@@ -35,14 +35,14 @@ const configureApp = async () => {
 
   // Handle page not found:
   // gets triggered when a request is made to
-  // an undefined route 
+  // an undefined route
   app.use((req, res, next) => {
     const error = new Error("Not Found, Please Check URL!");
     error.status = 404;
     next(error);
   });
 
-  // Error-handling middleware: 
+  // Error-handling middleware:
   // all express errors get passed to this
   // when next(error) is called
   app.use((err, req, res, next) => {
